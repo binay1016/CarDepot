@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <rect width="600" height="400" fill="#fffaf0" />
+  <g transform="translate(40,100)">
+    <path d="M0 200 L120 100 L420 100 L540 200 Z" fill="#ff6f00" />
+    <circle cx="150" cy="250" r="24" fill="#222" />
+    <circle cx="390" cy="250" r="24" fill="#222" />
+    <text x="270" y="120" fill="#fff" font-family="Oswald, Arial, sans-serif" font-size="28" text-anchor="middle">CarDepot</text>
+  </g>
+</svg>

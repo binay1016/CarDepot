@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <rect width="600" height="400" fill="#fff5f6" />
+  <g transform="translate(50,100)">
+    <rect x="0" y="30" width="500" height="180" rx="18" fill="#c8102e" />
+    <rect x="70" y="0" width="360" height="120" rx="14" fill="#ff6b6b" />
+    <circle cx="120" cy="240" r="24" fill="#222" />
+    <circle cx="380" cy="240" r="24" fill="#222" />
+    <text x="250" y="120" fill="#fff" font-family="Oswald, Arial, sans-serif" font-size="28" text-anchor="middle">CarDepot</text>
+  </g>
+</svg>

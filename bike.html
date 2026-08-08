@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CarDepot | Bikes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body style="align-items:flex-start;">
+
+<div class="listing-page">
+  <div class="listing-topbar">
+    <a href="home.html" class="back-link">&larr; Back to Home</a>
+    <div class="listing-title"><span id="pageIcon"></span> <span id="pageTitle"></span></div>
+  </div>
+
+  <!-- Companies and models are injected here by render.js -->
+  <div id="listingContainer"></div>
+</div>
+
+<script src="bike-data.js"></script>
+<script src="render.js"></script>
+
+</body>
+</html>
