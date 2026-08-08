@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header("Location: index.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -135,10 +144,10 @@
       </svg>
       <span>CarDepot</span>
     </div>
-    <a href="#" id="logoutBtn" class="logout-btn">Log Out</a>
+    <a href="logout.php" class="logout-btn">Log Out</a>
   </div>
   <div class="home-body">
-    <h1>Welcome, Binay 👋</h1>
+    <h1>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?> 👋</h1>
     <p>You've successfully logged in to your CarDepot dashboard.<br>Choose what you'd like to rent today.</p>
 
     <div class="choice-row">
@@ -154,6 +163,6 @@
   </div>
 </div>
 
-<script src="script.js"></script>
+
 </body>
 </html>

@@ -1,3 +1,9 @@
+<?php
+session_start();
+$loginError = $_SESSION['login_error'] ?? null;
+$registerNotice = $_SESSION['register_success'] ?? null;
+unset($_SESSION['login_error'], $_SESSION['register_success']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,17 +47,22 @@
     <div class="form-heading">Welcome Back</div>
     <p class="form-sub">Log in to your CarDepot account to continue.</p>
 
-    <div class="error-msg" id="errorMsg">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      <span>Incorrect username or password. Try again.</span>
-    </div>
+    <?php if ($loginError): ?>
+      <div class="error-msg show">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span><?php echo htmlspecialchars($loginError); ?></span>
+      </div>
+    <?php endif; ?>
 
-    <div class="success-msg" id="successMsg">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-      <span>Login successful. Redirecting to your dashboard...</span>
-    </div>
+    <?php if ($registerNotice): ?>
+      <div class="success-msg show">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        <span><?php echo htmlspecialchars($registerNotice); ?></span>
+      </div>
+    <?php endif; ?>
 
-    <form id="loginForm" method="post" novalidate>
+    <!-- action + method added, everything else identical to your version -->
+    <form action="login_register.php" method="post" novalidate>
       <div class="field">
         <label for="username">Username</label>
         <div class="input-wrap">
@@ -76,20 +87,17 @@
         <a href="#" onclick="return false;">Forgot password?</a>
       </div>
 
-      <button type="submit" class="btn-login">Log In</button>
+      <!-- name="login" added -->
+      <button type="submit" name="login" value="1" class="btn-login">Log In</button>
 
       <div class="auth-switch">
         <span>New here?</span>
         <a href="signup.html" class="btn-signup">Sign Up</a>
       </div>
-
-      <p class="hint">Demo credentials — Username: <b>binay</b> &nbsp;|&nbsp; Password: <b>binay123</b></p>
     </form>
   </div>
 
 </div>
-
-<script src="script.js"></script>
 
 </body>
 </html>
